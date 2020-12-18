@@ -2,9 +2,15 @@
   "name": "npm-demo",
   "version": "1.0.0",
   "description": "Demonstrating useful npm features",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "ava",
+    "show-npm-env": "node -e 'console.log(process.env)' | grep npm"
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/eatrocks/npm-demo/issues"
   },
-  "homepage": "https://github.com/eatrocks/npm-demo#readme"
+  "homepage": "https://github.com/eatrocks/npm-demo#readme",
+  "devDependencies": {
+    "ava": "^3.14.0"
+  }
 }
